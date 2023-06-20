@@ -1,0 +1,195 @@
+$darkBlue: #001e62;
+$libressePink: #e31d93;
+$blody: #720027;
+$red: #df271c;
+$pink: #ffd5fb;
+$pinkBg: #fcaeff;
+$grayBg: #f4f4f4;
+$grayText: #808080;
+$inputBg: #fafafa;
+$pushBg: #fcfcfc;
+$inputBorder: #c2c2c2;
+$mainSize: 700px;
+$green: #10d30c;
+
+@media screen and (max-width: 699px) {
+  $mainSize: 100%;
+}
+
+$mobile: 699px;
+$media: screen;
+$feature: max-width;
+
+@mixin centredBlock {
+  margin: 0 auto;
+  display: block;
+}
+
+@mixin innerImg {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+@mixin absoluteCentred {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  height: fit-content;
+}
+@mixin fixedBeforeNav {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 215;
+}
+@mixin fixedContainerInner {
+  position: absolute;
+  height: 97%;
+  width: 97%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  right: 0;
+  margin: auto;
+  @media #{$media} and (max-width: $mobile) {
+    border-radius: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+@mixin afterElem {
+  content: "";
+  position: absolute;
+}
+@mixin bottomBlock {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  height: 50%;
+  background: #fff;
+}
+@mixin withIcon {
+  position: relative;
+  padding: 7px 10px 7px 30px;
+  &::after {
+    @include afterElem;
+    left: 5px;
+    width: 18px;
+    height: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+@mixin ModelicaNorm {
+  font-family: "Bw Modelica" !important;
+  font-style: normal;
+}
+@mixin expressive {
+  font-family: "Expressive V";
+  font-style: normal;
+}
+
+@mixin Romb {
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  margin: auto;
+  display: block;
+  transform-origin: center;
+}
+
+@mixin whiteRombs {
+  position: relative;
+  &::before {
+    @include afterElem;
+    @include Romb;
+    left: -5px;
+    top: 0;
+    bottom: 0;
+  }
+  &::after {
+    @include afterElem;
+    @include Romb;
+    right: -5px;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+@keyframes cardFlip {
+  0% {
+    transform: rotateZ(0deg) rotateY(180deg);
+  }
+  50% {
+    transform: rotateZ(-10deg) rotateY(90deg);
+  }
+  100% {
+    transform: rotateZ(0deg) rotateY(0deg);
+  }
+}
+
+@keyframes cardUnFlip {
+  0% {
+    transform: rotateZ(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateZ(-10deg) rotateY(90deg);
+  }
+  100% {
+    transform: rotateZ(0deg) rotateY(180deg);
+  }
+}
+@keyframes fadeInLeftBig {
+  from {
+    opacity: 0;
+    transform: translateX(999px) translateY(-999px);
+  }
+}
+
+@keyframes rotateLoader {
+  to {
+    transform: rotate(360deg);
+    transform-origin: center;
+  }
+}
+@mixin overflowed {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    position: relative;
+    width: 5px;
+    right: 10px;
+  }
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $libressePink;
+  }
+}

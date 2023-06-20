@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Bw Modelica';
+    src: local('Bw Modelica Regular'), local('Bw-Modelica-Regular'), url('BwModelicaCyrillicDEMO-Regular.woff2') format('woff2'), url('BwModelicaCyrillicDEMO-Regular.woff') format('woff'), url('BwModelicaCyrillicDEMO-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Expressive V';
+    src: url('./ExpressiveV_W_Rg.woff2') format('woff2'), url('./ExpressiveV_W_Rg.woff') format('woff'), url('./ExpressiveV_Rg.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}

@@ -1,0 +1,5 @@
+export const SET_USER_DATA = 'SET_USER_DATA';
+export const SET_USER_COINS = 'SET_USER_COINS';
+export const FIRST_GAME_OPEN = 'FIRST_GAME_OPEN'
+
+export const OPEN_CARD_PAGE = 'OPEN_CARD_PAGE'
